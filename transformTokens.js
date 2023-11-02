@@ -1,7 +1,8 @@
 const StyleDictionary = require('style-dictionary')
+const { createPropertyFormatter } = StyleDictionary.formatHelpers;
 const deepMerge = require("deepmerge");
 const webConfig = require('./src/web/index.js')
-const androidConfig = require("./src/android/index.js");
+const iosConfig = require("./src/ios/index.js");
 
 StyleDictionary.registerTransform({
   name: 'size/px',
@@ -42,126 +43,46 @@ StyleDictionary.registerFilter({
   }
 })
 
+StyleDictionary.registerFormat({
+  name: 'enum.swift',
+  formatter: function({ dictionary, options, file }) {
+    const { outputReferences } = options;
+    const formatProperty = createPropertyFormatter({
+      outputReferences,
+      dictionary,
+      formatting: {
+        indentation: '    ',
+        prefix: 'public static let ',
+        separator: ': '+file.propertyType+' = '
+      }
+    });
+    return `\nimport UIKit\n\npublic enum `+file.className+` {\n` + dictionary.allTokens.map(formatProperty).join('\n') + `\n}\n`;
+  }
+});
+
 const StyleDictionaryExtended = StyleDictionary.extend({
-  ...deepMerge.all([androidConfig, webConfig]),
+  ...deepMerge.all([iosConfig, webConfig]),
   source: ["tokens/*.json"],
   platforms: {
-    scss: {
-      transformGroup: "custom/css",
-      buildPath: "build/scss/",
+    'ios-swift': {
+      transforms: [
+        'name/cti/camel'
+      ],
+      buildPath: 'Sources/Resources/',
       files: [
         {
-          destination: "_variables.scss",
-          format: "scss/variables",
-          filter: "validToken",
-        },
+          destination: 'Size.swift',
+          filter: (token) => token.type === 'dimension',
+          className: 'Size',
+          propertyType: 'CGFloat',
+          format: 'enum.swift'
+        }
       ],
-    },
-    less: {
-      transformGroup: "custom/css",
-      buildPath: "build/less/",
-      files: [
-        {
-          destination: "_variables.less",
-          format: "less/variables",
-          filter: "validToken",
-        },
-      ],
-    },
-    css: {
-      transformGroup: "custom/css",
-      buildPath: "build/css/",
-      files: [
-        {
-          destination: "_variables.css",
-          format: "css/variables",
-          filter: "validToken",
-          options: {
-            showFileHeader: false,
-          },
-        },
-      ],
-    },
-    "json-flat": {
-      transformGroup: "js",
-      buildPath: "build/json/",
-      files: [
-        {
-          destination: "styles.json",
-          format: "json/flat",
-          filter: "validToken",
-        },
-      ],
-    },
-    ios: {
-      transformGroup: "ios",
-      buildPath: "build/ios/",
-      files: [
-        {
-          destination: "StyleDictionaryColor.h",
-          format: "ios/colors.h",
-          className: "StyleDictionaryColor",
-          type: "StyleDictionaryColorName",
-          filter: {
-            type: "color",
-          },
-        },
-        {
-          destination: "StyleDictionaryColor.m",
-          format: "ios/colors.m",
-          className: "StyleDictionaryColor",
-          type: "StyleDictionaryColorName",
-          filter: {
-            type: "color",
-          },
-        },
-        {
-          destination: "StyleDictionarySize.h",
-          format: "ios/static.h",
-          className: "StyleDictionarySize",
-          type: "float",
-          filter: {
-            type: "number",
-          },
-        },
-        {
-          destination: "StyleDictionarySize.m",
-          format: "ios/static.m",
-          className: "StyleDictionarySize",
-          type: "float",
-          filter: {
-            type: "number",
-          },
-        },
-      ],
-    },
-
-    "ios-swift-separate-enums": {
-      transformGroup: "ios-swift-separate",
-      buildPath: "build/ios-swift/",
-      files: [
-        {
-          destination: "StyleDictionaryColor.swift",
-          format: "ios-swift/enum.swift",
-          className: "StyleDictionaryColor",
-          filter: {
-            type: "color",
-          },
-        },
-        {
-          destination: "StyleDictionarySize.swift",
-          format: "ios-swift/enum.swift",
-          className: "StyleDictionarySize",
-          type: "float",
-          filter: {
-            type: "number",
-          },
-        },
-      ],
-    },
+      actions: [
+        'ios/colorSets',
+      ]
+    }
   },
 });
-console.log('StyleDictionaryExtended', StyleDictionaryExtended)
-
 
 StyleDictionaryExtended.buildAllPlatforms()
