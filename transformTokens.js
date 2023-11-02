@@ -62,14 +62,30 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerFormat({
-  name: 'extension.swift',
+  name: 'color-extension.swift',
   formatter: function({ dictionary, options, file }) {
     const { outputReferences } = options;
     const formatProperty = (token) => {
-      const name = changeCase.pascalCase(token.path.slice(2).join(' '));
-      return '    public static let ' + name + ' = ' + file.className + '('+file.constructorParameter + '"'+ name+'") // ' + token.value
+      const name = changeCase.camelCase(token.path.slice(2).join(' '));
+      const value = changeCase.pascalCase(token.path.slice(2).join(' '));
+      return '    /// Tripster design token for color with hex value of **`' + token.value + '`**\n' +
+        '    static let ' + name + ' = Color("'+ value+'", bundle: .module)\n'
     }
-    return `\nimport `+file.import+`\n\npublic extension `+file.className+` {\n` + dictionary.allTokens.map(formatProperty).join('\n') + `\n}\n`;
+    return `\nimport SwiftUI\n\npublic extension Color {\n` + dictionary.allTokens.map(formatProperty).join('\n') + `\n}\n`;
+  }
+});
+
+StyleDictionary.registerFormat({
+  name: 'uicolor-extension.swift',
+  formatter: function({ dictionary, options, file }) {
+    const { outputReferences } = options;
+    const formatProperty = (token) => {
+      const name = changeCase.camelCase(token.path.slice(2).join(' '));
+      const value = changeCase.pascalCase(token.path.slice(2).join(' '));
+      return '    /// Tripster design token for color with hex value of **`' + token.value + '`**\n' +
+        '    static let ' + name + ' = UIColor(named: "'+ value+'", in: .module, compatibleWith: nil)\n'
+    }
+    return `\nimport UIKit\n\npublic extension UIColor {\n` + dictionary.allTokens.map(formatProperty).join('\n') + `\n}\n`;
   }
 });
 
@@ -93,18 +109,12 @@ const StyleDictionaryExtended = StyleDictionary.extend({
         {
           destination: 'Color.swift',
           filter: (token) => token.type === 'color',
-          className: 'Color',
-          constructorParameter: '',
-          import: 'SwiftUI',
-          format: 'extension.swift'
+          format: 'color-extension.swift'
         },
         {
           destination: 'UIColor.swift',
           filter: (token) => token.type === 'color',
-          className: 'UIColor',
-          constructorParameter: 'named: ',
-          import: 'UIKit',
-          format: 'extension.swift'
+          format: 'uicolor-extension.swift'
         }
       ],
       actions: [

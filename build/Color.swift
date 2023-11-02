@@ -2,208 +2,616 @@
 import SwiftUI
 
 public extension Color {
-    public static let ColorTextDefault = Color("ColorTextDefault") // #2b3a49ff
-    public static let ColorTextSubtle = Color("ColorTextSubtle") // #8a95a1ff
-    public static let ColorTextSubtler = Color("ColorTextSubtler") // #bbbcbfff
-    public static let ColorTextInverse = Color("ColorTextInverse") // #ffffffff
-    public static let ColorTextAccentGreen = Color("ColorTextAccentGreen") // #00be8bff
-    public static let ColorTextAccentBlue = Color("ColorTextAccentBlue") // #2e78c1ff
-    public static let ColorTextAccentMagenta = Color("ColorTextAccentMagenta") // #d42764ff
-    public static let ColorTextAccentRed = Color("ColorTextAccentRed") // #f14555ff
-    public static let ColorTextAccentOrange = Color("ColorTextAccentOrange") // #f19c38ff
-    public static let ColorTextDisabled = Color("ColorTextDisabled") // #0000004d
-    public static let ColorTextSubtlest = Color("ColorTextSubtlest") // #d5d8dbff
-    public static let ColorLinkDefault = Color("ColorLinkDefault") // #2e78c1ff
-    public static let ColorLinkDefaultHovered = Color("ColorLinkDefaultHovered") // #d42764ff
-    public static let ColorIconDefault = Color("ColorIconDefault") // #2b3a49ff
-    public static let ColorIconSubtle = Color("ColorIconSubtle") // #8a95a1ff
-    public static let ColorIconSubtlest = Color("ColorIconSubtlest") // #d5d8dbff
-    public static let ColorIconInverse = Color("ColorIconInverse") // #ffffffff
-    public static let ColorIconDisabled = Color("ColorIconDisabled") // #0000004d
-    public static let ColorIconAccentBlue = Color("ColorIconAccentBlue") // #2e78c1ff
-    public static let ColorIconAccentOrange = Color("ColorIconAccentOrange") // #f19c38ff
-    public static let ColorIconAccentRed = Color("ColorIconAccentRed") // #f14555ff
-    public static let ColorIconAccentMagenta = Color("ColorIconAccentMagenta") // #d42764ff
-    public static let ColorIconAccentGreen = Color("ColorIconAccentGreen") // #00be8bff
-    public static let ColorIconSubtler = Color("ColorIconSubtler") // #bbbcbfff
-    public static let ColorBorderDefault = Color("ColorBorderDefault") // #d5d8dbff
-    public static let ColorBorderSubtle = Color("ColorBorderSubtle") // #bbbcbfff
-    public static let ColorBorderFocused = Color("ColorBorderFocused") // #2b3a49ff
-    public static let ColorBorderInverse = Color("ColorBorderInverse") // #ffffffff
-    public static let ColorBorderAccentGreen = Color("ColorBorderAccentGreen") // #00be8bff
-    public static let ColorBorderAccentBlue = Color("ColorBorderAccentBlue") // #2e78c1ff
-    public static let ColorBorderAccentOrange = Color("ColorBorderAccentOrange") // #f19c38ff
-    public static let ColorBorderAccentRed = Color("ColorBorderAccentRed") // #f14555ff
-    public static let ColorBorderAccentMagenta = Color("ColorBorderAccentMagenta") // #d42764ff
-    public static let ColorBackgroundDefault = Color("ColorBackgroundDefault") // #ffffffff
-    public static let ColorBackgroundSubtle = Color("ColorBackgroundSubtle") // #f5f7f6ff
-    public static let ColorBackgroundSubtler = Color("ColorBackgroundSubtler") // #efefefff
-    public static let ColorBackgroundInverse = Color("ColorBackgroundInverse") // #2b3a49ff
-    public static let ColorBackgroundAccentBlueLight = Color("ColorBackgroundAccentBlueLight") // #bad2ebff
-    public static let ColorBackgroundAccentOrangeLight = Color("ColorBackgroundAccentOrangeLight") // #fff2d0ff
-    public static let ColorBackgroundAccentRedLight = Color("ColorBackgroundAccentRedLight") // #ffe6eaff
-    public static let ColorBackgroundAccentGreenLight = Color("ColorBackgroundAccentGreenLight") // #d8ede7ff
-    public static let ColorBackgroundAccentGreen = Color("ColorBackgroundAccentGreen") // #00be8bff
-    public static let ColorBackgroundAccentBlue = Color("ColorBackgroundAccentBlue") // #2e78c1ff
-    public static let ColorBackgroundAccentOrange = Color("ColorBackgroundAccentOrange") // #f19c38ff
-    public static let ColorBackgroundAccentRed = Color("ColorBackgroundAccentRed") // #f14555ff
-    public static let ColorBackgroundAccentMagenta = Color("ColorBackgroundAccentMagenta") // #d42764ff
-    public static let ColorBackgroundSubtlest = Color("ColorBackgroundSubtlest") // #d5d8dbff
-    public static let ColorOverlayModal = Color("ColorOverlayModal") // #000000b3
-    public static let ColorSkeletonDefault = Color("ColorSkeletonDefault") // #0000001a
-    public static let ColorSkeletonDefaultShimmer = Color("ColorSkeletonDefaultShimmer") // #0000000d
-    public static let ColorNeutralWhite = Color("ColorNeutralWhite") // #ffffffff
-    public static let ColorNeutralGray_95 = Color("ColorNeutralGray_95") // #f5f7f6ff
-    public static let ColorNeutralGray_90 = Color("ColorNeutralGray_90") // #efefefff
-    public static let ColorNeutralGray_80 = Color("ColorNeutralGray_80") // #d5d8dbff
-    public static let ColorNeutralGray_70 = Color("ColorNeutralGray_70") // #bbbcbfff
-    public static let ColorNeutralGray_60 = Color("ColorNeutralGray_60") // #8a95a1ff
-    public static let ColorNeutralGray_20 = Color("ColorNeutralGray_20") // #2b3a49ff
-    public static let ColorNeutralBlack = Color("ColorNeutralBlack") // #000000ff
-    public static let ColorSaturatedGreen_40 = Color("ColorSaturatedGreen_40") // #00be8bff
-    public static let ColorSaturatedGreen_90 = Color("ColorSaturatedGreen_90") // #d8ede7ff
-    public static let ColorSaturatedBlue_50 = Color("ColorSaturatedBlue_50") // #2e78c1ff
-    public static let ColorSaturatedBlue_80 = Color("ColorSaturatedBlue_80") // #bad2ebff
-    public static let ColorSaturatedOrange_60 = Color("ColorSaturatedOrange_60") // #f19c38ff
-    public static let ColorSaturatedOrange_90 = Color("ColorSaturatedOrange_90") // #fff2d0ff
-    public static let ColorSaturatedRed_60 = Color("ColorSaturatedRed_60") // #f14555ff
-    public static let ColorSaturatedRed_95 = Color("ColorSaturatedRed_95") // #ffe6eaff
-    public static let ColorSaturatedMagenta_50 = Color("ColorSaturatedMagenta_50") // #d42764ff
-    public static let ColorTransparentBlackA050 = Color("ColorTransparentBlackA050") // #0000000d
-    public static let ColorTransparentBlackA100 = Color("ColorTransparentBlackA100") // #0000001a
-    public static let ColorTransparentBlackA200 = Color("ColorTransparentBlackA200") // #00000033
-    public static let ColorTransparentBlackA300 = Color("ColorTransparentBlackA300") // #0000004d
-    public static let ColorTransparentBlackA400 = Color("ColorTransparentBlackA400") // #00000066
-    public static let ColorTransparentBlackA500 = Color("ColorTransparentBlackA500") // #00000080
-    public static let ColorTransparentBlackA600 = Color("ColorTransparentBlackA600") // #00000099
-    public static let ColorTransparentBlackA700 = Color("ColorTransparentBlackA700") // #000000b3
-    public static let ColorTransparentBlackA800 = Color("ColorTransparentBlackA800") // #000000cc
-    public static let ColorTransparentWhiteA100 = Color("ColorTransparentWhiteA100") // #ffffff1a
-    public static let ColorTransparentWhiteA200 = Color("ColorTransparentWhiteA200") // #ffffff33
-    public static let ColorTransparentWhiteA300 = Color("ColorTransparentWhiteA300") // #ffffff4d
-    public static let ColorTransparentWhiteA400 = Color("ColorTransparentWhiteA400") // #ffffff66
-    public static let ColorTransparentWhiteA500 = Color("ColorTransparentWhiteA500") // #ffffff80
-    public static let ColorTransparentWhiteA600 = Color("ColorTransparentWhiteA600") // #ffffff99
-    public static let ColorTransparentWhiteA700 = Color("ColorTransparentWhiteA700") // #ffffffb3
-    public static let ColorTransparentWhiteA800 = Color("ColorTransparentWhiteA800") // #ffffffcc
-    public static let ColorTransparentBlackA150 = Color("ColorTransparentBlackA150") // #00000026
-    public static let ButtonPrimaryColorText = Color("ButtonPrimaryColorText") // #ffffffff
-    public static let ButtonPrimaryColorBackground = Color("ButtonPrimaryColorBackground") // #00be8bff
-    public static let ButtonPrimaryColorIcon = Color("ButtonPrimaryColorIcon") // #ffffffff
-    public static let ButtonPrimaryColorTextDisabled = Color("ButtonPrimaryColorTextDisabled") // #0000004d
-    public static let ButtonPrimaryColorIconDisabled = Color("ButtonPrimaryColorIconDisabled") // #0000004d
-    public static let ButtonPrimaryColorBackgroundDisabled = Color("ButtonPrimaryColorBackgroundDisabled") // #0000000d
-    public static let ButtonPrimaryColorBorderFocused = Color("ButtonPrimaryColorBorderFocused") // #2b3a49ff
-    public static let ButtonSecondaryColorText = Color("ButtonSecondaryColorText") // #2b3a49ff
-    public static let ButtonSecondaryColorBackground = Color("ButtonSecondaryColorBackground") // #0000000d
-    public static let ButtonSecondaryColorIcon = Color("ButtonSecondaryColorIcon") // #2b3a49ff
-    public static let ButtonSecondaryColorTextDisabled = Color("ButtonSecondaryColorTextDisabled") // #0000004d
-    public static let ButtonSecondaryColorIconDisabled = Color("ButtonSecondaryColorIconDisabled") // #0000004d
-    public static let ButtonSecondaryColorBackgroundDisabled = Color("ButtonSecondaryColorBackgroundDisabled") // #0000000d
-    public static let ButtonSecondaryColorBorderFocused = Color("ButtonSecondaryColorBorderFocused") // #2b3a49ff
-    public static let ButtonSecondaryColorBackgroundHovered = Color("ButtonSecondaryColorBackgroundHovered") // #0000001a
-    public static let ButtonSecondaryColorBackgroundPressed = Color("ButtonSecondaryColorBackgroundPressed") // #00000026
-    public static let ButtonOutlineColorText = Color("ButtonOutlineColorText") // #2b3a49ff
-    public static let ButtonOutlineColorIcon = Color("ButtonOutlineColorIcon") // #2b3a49ff
-    public static let ButtonOutlineColorBorder = Color("ButtonOutlineColorBorder") // #00000033
-    public static let ButtonOutlineColorBorderFocused = Color("ButtonOutlineColorBorderFocused") // #2b3a49ff
-    public static let ButtonOutlineColorBorderDisabled = Color("ButtonOutlineColorBorderDisabled") // #00000033
-    public static let ButtonOutlineColorTextDisabled = Color("ButtonOutlineColorTextDisabled") // #0000004d
-    public static let ButtonOutlineColorIconDisabled = Color("ButtonOutlineColorIconDisabled") // #0000004d
-    public static let ButtonGhostColorText = Color("ButtonGhostColorText") // #2e78c1ff
-    public static let ButtonGhostColorIcon = Color("ButtonGhostColorIcon") // #2e78c1ff
-    public static let ButtonGhostColorBorderFocused = Color("ButtonGhostColorBorderFocused") // #2b3a49ff
-    public static let ButtonGhostColorTextDisabled = Color("ButtonGhostColorTextDisabled") // #0000004d
-    public static let ButtonGhostColorIconDisabled = Color("ButtonGhostColorIconDisabled") // #0000004d
-    public static let InputColorText = Color("InputColorText") // #2b3a49ff
-    public static let InputColorBackground = Color("InputColorBackground") // #ffffffff
-    public static let InputColorBorder = Color("InputColorBorder") // #00000033
-    public static let InputColorIcon = Color("InputColorIcon") // #2b3a49ff
-    public static let InputColorTextPlaceholder = Color("InputColorTextPlaceholder") // #bbbcbfff
-    public static let InputColorBackgroundDisabled = Color("InputColorBackgroundDisabled") // #efefefff
-    public static let InputColorBorderDisabled = Color("InputColorBorderDisabled") // #0000001a
-    public static let InputColorBorderFocused = Color("InputColorBorderFocused") // #2b3a49ff
-    public static let InputColorTextDisabled = Color("InputColorTextDisabled") // #0000004d
-    public static let InputColorIconDisabled = Color("InputColorIconDisabled") // #0000004d
-    public static let InputColorHint = Color("InputColorHint") // #2b3a49ff
-    public static let InputColorBorderError = Color("InputColorBorderError") // #f14555ff
-    public static let InputColorHintError = Color("InputColorHintError") // #f14555ff
-    public static let InputColorOutlineError = Color("InputColorOutlineError") // #ffe6eaff
-    public static let InputColorOutlineFocused = Color("InputColorOutlineFocused") // #fff2d0ff
-    public static let CheckboxColorText = Color("CheckboxColorText") // #2b3a49ff
-    public static let CheckboxColorHint = Color("CheckboxColorHint") // #8a95a1ff
-    public static let CheckboxColorBorder = Color("CheckboxColorBorder") // #00000033
-    public static let CheckboxColorBorderHovered = Color("CheckboxColorBorderHovered") // #0000004d
-    public static let CheckboxColorBorderFocused = Color("CheckboxColorBorderFocused") // #2b3a49ff
-    public static let CheckboxColorBackground = Color("CheckboxColorBackground") // #ffffffff
-    public static let CheckboxColorBackgroundSelected = Color("CheckboxColorBackgroundSelected") // #00be8bff
-    public static let CheckboxColorIconSelected = Color("CheckboxColorIconSelected") // #ffffffff
-    public static let RadiobuttonColorText = Color("RadiobuttonColorText") // #2b3a49ff
-    public static let RadiobuttonColorHint = Color("RadiobuttonColorHint") // #8a95a1ff
-    public static let RadiobuttonColorBorder = Color("RadiobuttonColorBorder") // #00000033
-    public static let RadiobuttonColorBorderHovered = Color("RadiobuttonColorBorderHovered") // #0000004d
-    public static let RadiobuttonColorBorderFocused = Color("RadiobuttonColorBorderFocused") // #2b3a49ff
-    public static let RadiobuttonColorBackground = Color("RadiobuttonColorBackground") // #ffffffff
-    public static let RadiobuttonColorBackgroundSelected = Color("RadiobuttonColorBackgroundSelected") // #00be8bff
-    public static let RadiobuttonColorDotSelected = Color("RadiobuttonColorDotSelected") // #ffffffff
-    public static let CheckbuttonColorText = Color("CheckbuttonColorText") // #2b3a49ff
-    public static let CheckbuttonColorBorderFocused = Color("CheckbuttonColorBorderFocused") // #2b3a49ff
-    public static let CheckbuttonColorBackground = Color("CheckbuttonColorBackground") // #0000000d
-    public static let CheckbuttonColorBackgroundSelected = Color("CheckbuttonColorBackgroundSelected") // #00be8bff
-    public static let CheckbuttonColorIconSelected = Color("CheckbuttonColorIconSelected") // #ffffffff
-    public static let CheckbuttonColorBackgroundFocused = Color("CheckbuttonColorBackgroundFocused") // #ffffffff
-    public static let CheckbuttonColorIcon = Color("CheckbuttonColorIcon") // #2b3a49ff
-    public static let CheckbuttonColorTextSelected = Color("CheckbuttonColorTextSelected") // #ffffffff
-    public static let CheckbuttonColorAreaHovered = Color("CheckbuttonColorAreaHovered") // #0000000d
-    public static let CheckbuttonColorAreaFocused = Color("CheckbuttonColorAreaFocused") // #0000001a
-    public static let SwitchColorThumb = Color("SwitchColorThumb") // #ffffffff
-    public static let SwitchColorBackground = Color("SwitchColorBackground") // #0000001a
-    public static let SwitchColorBackgroundSelected = Color("SwitchColorBackgroundSelected") // #00be8bff
-    public static let SwitchColorBorderFocused = Color("SwitchColorBorderFocused") // #2b3a49ff
-    public static let ChipsColorText = Color("ChipsColorText") // #2b3a49ff
-    public static let ChipsColorIcon = Color("ChipsColorIcon") // #2b3a49ff
-    public static let ChipsColorCounter = Color("ChipsColorCounter") // #8a95a1ff
-    public static let ChipsColorBackground = Color("ChipsColorBackground") // #0000000d
-    public static let ChipsColorTextSelected = Color("ChipsColorTextSelected") // #ffffffff
-    public static let ChipsColorIconSelected = Color("ChipsColorIconSelected") // #ffffffff
-    public static let ChipsColorCounterSelected = Color("ChipsColorCounterSelected") // #8a95a1ff
-    public static let ChipsColorBackgroundSelected = Color("ChipsColorBackgroundSelected") // #2b3a49ff
-    public static let ChipsColorBorderFocused = Color("ChipsColorBorderFocused") // #2b3a49ff
-    public static let ChipsColorBackgroundHovered = Color("ChipsColorBackgroundHovered") // #0000001a
-    public static let ChipsColorBackgroundPressed = Color("ChipsColorBackgroundPressed") // #00000026
-    public static let SelectColorText = Color("SelectColorText") // #2b3a49ff
-    public static let SelectColorTextPlaceholder = Color("SelectColorTextPlaceholder") // #bbbcbfff
-    public static let SelectColorTextDisabled = Color("SelectColorTextDisabled") // #0000004d
-    public static let SelectColorIcon = Color("SelectColorIcon") // #2b3a49ff
-    public static let SelectColorIconDisabled = Color("SelectColorIconDisabled") // #0000004d
-    public static let SelectColorHint = Color("SelectColorHint") // #2b3a49ff
-    public static let SelectColorHintError = Color("SelectColorHintError") // #f14555ff
-    public static let SelectColorBorder = Color("SelectColorBorder") // #00000033
-    public static let SelectColorBorderFocused = Color("SelectColorBorderFocused") // #2b3a49ff
-    public static let SelectColorBorderError = Color("SelectColorBorderError") // #f14555ff
-    public static let SelectColorBorderDisabled = Color("SelectColorBorderDisabled") // #0000001a
-    public static let SelectColorBackground = Color("SelectColorBackground") // #ffffffff
-    public static let SelectColorBackgroundDisabled = Color("SelectColorBackgroundDisabled") // #efefefff
-    public static let SelectColorOutlineFocused = Color("SelectColorOutlineFocused") // #fff2d0ff
-    public static let SelectColorOutlineError = Color("SelectColorOutlineError") // #ffe6eaff
-    public static let CounterColorText = Color("CounterColorText") // #ffffffff
-    public static let CounterColorBackground = Color("CounterColorBackground") // #f14555ff
-    public static let ModalColorTitle = Color("ModalColorTitle") // #2b3a49ff
-    public static let ModalColorBackground = Color("ModalColorBackground") // #ffffffff
-    public static let ToastColorBackground = Color("ToastColorBackground") // #ffffffff
-    public static let ToastColorText = Color("ToastColorText") // #2b3a49ff
-    public static let ToastColorIcon = Color("ToastColorIcon") // #2b3a49ff
-    public static let ToastColorCloseButton = Color("ToastColorCloseButton") // #0000004d
-    public static let SegmentedControlColorText = Color("SegmentedControlColorText") // #2b3a49ff
-    public static let SegmentedControlColorBackground = Color("SegmentedControlColorBackground") // #efefefff
-    public static let SegmentedControlColorBackgroundSelected = Color("SegmentedControlColorBackgroundSelected") // #ffffffff
-    public static let SegmentedControlColorSeparator = Color("SegmentedControlColorSeparator") // #0000001a
-    public static let BadgeColorText = Color("BadgeColorText") // #2b3a49ff
-    public static let BadgeColorTextInverse = Color("BadgeColorTextInverse") // #ffffffff
-    public static let BadgeColorBackgroundLight = Color("BadgeColorBackgroundLight") // #efefefff
-    public static let BadgeColorBackgroundWarning = Color("BadgeColorBackgroundWarning") // #f19c38ff
-    public static let BadgeColorBackgroundError = Color("BadgeColorBackgroundError") // #f14555ff
-    public static let BadgeColorBackgroundSuccess = Color("BadgeColorBackgroundSuccess") // #00be8bff
-    public static let BadgeColorBackgroundTransparent = Color("BadgeColorBackgroundTransparent") // #ffffff4d
-    public static let BadgeColorBackgroundDark = Color("BadgeColorBackgroundDark") // #2b3a49ff
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let colorTextDefault = Color("ColorTextDefault", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#8a95a1ff`**
+    static let colorTextSubtle = Color("ColorTextSubtle", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#bbbcbfff`**
+    static let colorTextSubtler = Color("ColorTextSubtler", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let colorTextInverse = Color("ColorTextInverse", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let colorTextAccentGreen = Color("ColorTextAccentGreen", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2e78c1ff`**
+    static let colorTextAccentBlue = Color("ColorTextAccentBlue", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d42764ff`**
+    static let colorTextAccentMagenta = Color("ColorTextAccentMagenta", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let colorTextAccentRed = Color("ColorTextAccentRed", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f19c38ff`**
+    static let colorTextAccentOrange = Color("ColorTextAccentOrange", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let colorTextDisabled = Color("ColorTextDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d5d8dbff`**
+    static let colorTextSubtlest = Color("ColorTextSubtlest", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2e78c1ff`**
+    static let colorLinkDefault = Color("ColorLinkDefault", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d42764ff`**
+    static let colorLinkDefaultHovered = Color("ColorLinkDefaultHovered", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let colorIconDefault = Color("ColorIconDefault", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#8a95a1ff`**
+    static let colorIconSubtle = Color("ColorIconSubtle", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d5d8dbff`**
+    static let colorIconSubtlest = Color("ColorIconSubtlest", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let colorIconInverse = Color("ColorIconInverse", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let colorIconDisabled = Color("ColorIconDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2e78c1ff`**
+    static let colorIconAccentBlue = Color("ColorIconAccentBlue", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f19c38ff`**
+    static let colorIconAccentOrange = Color("ColorIconAccentOrange", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let colorIconAccentRed = Color("ColorIconAccentRed", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d42764ff`**
+    static let colorIconAccentMagenta = Color("ColorIconAccentMagenta", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let colorIconAccentGreen = Color("ColorIconAccentGreen", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#bbbcbfff`**
+    static let colorIconSubtler = Color("ColorIconSubtler", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d5d8dbff`**
+    static let colorBorderDefault = Color("ColorBorderDefault", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#bbbcbfff`**
+    static let colorBorderSubtle = Color("ColorBorderSubtle", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let colorBorderFocused = Color("ColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let colorBorderInverse = Color("ColorBorderInverse", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let colorBorderAccentGreen = Color("ColorBorderAccentGreen", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2e78c1ff`**
+    static let colorBorderAccentBlue = Color("ColorBorderAccentBlue", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f19c38ff`**
+    static let colorBorderAccentOrange = Color("ColorBorderAccentOrange", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let colorBorderAccentRed = Color("ColorBorderAccentRed", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d42764ff`**
+    static let colorBorderAccentMagenta = Color("ColorBorderAccentMagenta", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let colorBackgroundDefault = Color("ColorBackgroundDefault", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f5f7f6ff`**
+    static let colorBackgroundSubtle = Color("ColorBackgroundSubtle", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#efefefff`**
+    static let colorBackgroundSubtler = Color("ColorBackgroundSubtler", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let colorBackgroundInverse = Color("ColorBackgroundInverse", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#bad2ebff`**
+    static let colorBackgroundAccentBlueLight = Color("ColorBackgroundAccentBlueLight", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#fff2d0ff`**
+    static let colorBackgroundAccentOrangeLight = Color("ColorBackgroundAccentOrangeLight", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffe6eaff`**
+    static let colorBackgroundAccentRedLight = Color("ColorBackgroundAccentRedLight", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d8ede7ff`**
+    static let colorBackgroundAccentGreenLight = Color("ColorBackgroundAccentGreenLight", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let colorBackgroundAccentGreen = Color("ColorBackgroundAccentGreen", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2e78c1ff`**
+    static let colorBackgroundAccentBlue = Color("ColorBackgroundAccentBlue", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f19c38ff`**
+    static let colorBackgroundAccentOrange = Color("ColorBackgroundAccentOrange", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let colorBackgroundAccentRed = Color("ColorBackgroundAccentRed", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d42764ff`**
+    static let colorBackgroundAccentMagenta = Color("ColorBackgroundAccentMagenta", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d5d8dbff`**
+    static let colorBackgroundSubtlest = Color("ColorBackgroundSubtlest", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#000000b3`**
+    static let colorOverlayModal = Color("ColorOverlayModal", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000001a`**
+    static let colorSkeletonDefault = Color("ColorSkeletonDefault", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000000d`**
+    static let colorSkeletonDefaultShimmer = Color("ColorSkeletonDefaultShimmer", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let colorNeutralWhite = Color("ColorNeutralWhite", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f5f7f6ff`**
+    static let colorNeutralGray_95 = Color("ColorNeutralGray_95", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#efefefff`**
+    static let colorNeutralGray_90 = Color("ColorNeutralGray_90", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d5d8dbff`**
+    static let colorNeutralGray_80 = Color("ColorNeutralGray_80", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#bbbcbfff`**
+    static let colorNeutralGray_70 = Color("ColorNeutralGray_70", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#8a95a1ff`**
+    static let colorNeutralGray_60 = Color("ColorNeutralGray_60", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let colorNeutralGray_20 = Color("ColorNeutralGray_20", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#000000ff`**
+    static let colorNeutralBlack = Color("ColorNeutralBlack", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let colorSaturatedGreen_40 = Color("ColorSaturatedGreen_40", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d8ede7ff`**
+    static let colorSaturatedGreen_90 = Color("ColorSaturatedGreen_90", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2e78c1ff`**
+    static let colorSaturatedBlue_50 = Color("ColorSaturatedBlue_50", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#bad2ebff`**
+    static let colorSaturatedBlue_80 = Color("ColorSaturatedBlue_80", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f19c38ff`**
+    static let colorSaturatedOrange_60 = Color("ColorSaturatedOrange_60", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#fff2d0ff`**
+    static let colorSaturatedOrange_90 = Color("ColorSaturatedOrange_90", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let colorSaturatedRed_60 = Color("ColorSaturatedRed_60", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffe6eaff`**
+    static let colorSaturatedRed_95 = Color("ColorSaturatedRed_95", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#d42764ff`**
+    static let colorSaturatedMagenta_50 = Color("ColorSaturatedMagenta_50", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000000d`**
+    static let colorTransparentBlackA050 = Color("ColorTransparentBlackA050", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000001a`**
+    static let colorTransparentBlackA100 = Color("ColorTransparentBlackA100", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000033`**
+    static let colorTransparentBlackA200 = Color("ColorTransparentBlackA200", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let colorTransparentBlackA300 = Color("ColorTransparentBlackA300", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000066`**
+    static let colorTransparentBlackA400 = Color("ColorTransparentBlackA400", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000080`**
+    static let colorTransparentBlackA500 = Color("ColorTransparentBlackA500", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000099`**
+    static let colorTransparentBlackA600 = Color("ColorTransparentBlackA600", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#000000b3`**
+    static let colorTransparentBlackA700 = Color("ColorTransparentBlackA700", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#000000cc`**
+    static let colorTransparentBlackA800 = Color("ColorTransparentBlackA800", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffff1a`**
+    static let colorTransparentWhiteA100 = Color("ColorTransparentWhiteA100", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffff33`**
+    static let colorTransparentWhiteA200 = Color("ColorTransparentWhiteA200", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffff4d`**
+    static let colorTransparentWhiteA300 = Color("ColorTransparentWhiteA300", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffff66`**
+    static let colorTransparentWhiteA400 = Color("ColorTransparentWhiteA400", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffff80`**
+    static let colorTransparentWhiteA500 = Color("ColorTransparentWhiteA500", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffff99`**
+    static let colorTransparentWhiteA600 = Color("ColorTransparentWhiteA600", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffb3`**
+    static let colorTransparentWhiteA700 = Color("ColorTransparentWhiteA700", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffcc`**
+    static let colorTransparentWhiteA800 = Color("ColorTransparentWhiteA800", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000026`**
+    static let colorTransparentBlackA150 = Color("ColorTransparentBlackA150", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let buttonPrimaryColorText = Color("ButtonPrimaryColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let buttonPrimaryColorBackground = Color("ButtonPrimaryColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let buttonPrimaryColorIcon = Color("ButtonPrimaryColorIcon", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let buttonPrimaryColorTextDisabled = Color("ButtonPrimaryColorTextDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let buttonPrimaryColorIconDisabled = Color("ButtonPrimaryColorIconDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000000d`**
+    static let buttonPrimaryColorBackgroundDisabled = Color("ButtonPrimaryColorBackgroundDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let buttonPrimaryColorBorderFocused = Color("ButtonPrimaryColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let buttonSecondaryColorText = Color("ButtonSecondaryColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000000d`**
+    static let buttonSecondaryColorBackground = Color("ButtonSecondaryColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let buttonSecondaryColorIcon = Color("ButtonSecondaryColorIcon", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let buttonSecondaryColorTextDisabled = Color("ButtonSecondaryColorTextDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let buttonSecondaryColorIconDisabled = Color("ButtonSecondaryColorIconDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000000d`**
+    static let buttonSecondaryColorBackgroundDisabled = Color("ButtonSecondaryColorBackgroundDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let buttonSecondaryColorBorderFocused = Color("ButtonSecondaryColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000001a`**
+    static let buttonSecondaryColorBackgroundHovered = Color("ButtonSecondaryColorBackgroundHovered", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000026`**
+    static let buttonSecondaryColorBackgroundPressed = Color("ButtonSecondaryColorBackgroundPressed", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let buttonOutlineColorText = Color("ButtonOutlineColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let buttonOutlineColorIcon = Color("ButtonOutlineColorIcon", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000033`**
+    static let buttonOutlineColorBorder = Color("ButtonOutlineColorBorder", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let buttonOutlineColorBorderFocused = Color("ButtonOutlineColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000033`**
+    static let buttonOutlineColorBorderDisabled = Color("ButtonOutlineColorBorderDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let buttonOutlineColorTextDisabled = Color("ButtonOutlineColorTextDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let buttonOutlineColorIconDisabled = Color("ButtonOutlineColorIconDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2e78c1ff`**
+    static let buttonGhostColorText = Color("ButtonGhostColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2e78c1ff`**
+    static let buttonGhostColorIcon = Color("ButtonGhostColorIcon", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let buttonGhostColorBorderFocused = Color("ButtonGhostColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let buttonGhostColorTextDisabled = Color("ButtonGhostColorTextDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let buttonGhostColorIconDisabled = Color("ButtonGhostColorIconDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let inputColorText = Color("InputColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let inputColorBackground = Color("InputColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000033`**
+    static let inputColorBorder = Color("InputColorBorder", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let inputColorIcon = Color("InputColorIcon", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#bbbcbfff`**
+    static let inputColorTextPlaceholder = Color("InputColorTextPlaceholder", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#efefefff`**
+    static let inputColorBackgroundDisabled = Color("InputColorBackgroundDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000001a`**
+    static let inputColorBorderDisabled = Color("InputColorBorderDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let inputColorBorderFocused = Color("InputColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let inputColorTextDisabled = Color("InputColorTextDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let inputColorIconDisabled = Color("InputColorIconDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let inputColorHint = Color("InputColorHint", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let inputColorBorderError = Color("InputColorBorderError", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let inputColorHintError = Color("InputColorHintError", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffe6eaff`**
+    static let inputColorOutlineError = Color("InputColorOutlineError", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#fff2d0ff`**
+    static let inputColorOutlineFocused = Color("InputColorOutlineFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let checkboxColorText = Color("CheckboxColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#8a95a1ff`**
+    static let checkboxColorHint = Color("CheckboxColorHint", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000033`**
+    static let checkboxColorBorder = Color("CheckboxColorBorder", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let checkboxColorBorderHovered = Color("CheckboxColorBorderHovered", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let checkboxColorBorderFocused = Color("CheckboxColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let checkboxColorBackground = Color("CheckboxColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let checkboxColorBackgroundSelected = Color("CheckboxColorBackgroundSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let checkboxColorIconSelected = Color("CheckboxColorIconSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let radiobuttonColorText = Color("RadiobuttonColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#8a95a1ff`**
+    static let radiobuttonColorHint = Color("RadiobuttonColorHint", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000033`**
+    static let radiobuttonColorBorder = Color("RadiobuttonColorBorder", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let radiobuttonColorBorderHovered = Color("RadiobuttonColorBorderHovered", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let radiobuttonColorBorderFocused = Color("RadiobuttonColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let radiobuttonColorBackground = Color("RadiobuttonColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let radiobuttonColorBackgroundSelected = Color("RadiobuttonColorBackgroundSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let radiobuttonColorDotSelected = Color("RadiobuttonColorDotSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let checkbuttonColorText = Color("CheckbuttonColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let checkbuttonColorBorderFocused = Color("CheckbuttonColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000000d`**
+    static let checkbuttonColorBackground = Color("CheckbuttonColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let checkbuttonColorBackgroundSelected = Color("CheckbuttonColorBackgroundSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let checkbuttonColorIconSelected = Color("CheckbuttonColorIconSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let checkbuttonColorBackgroundFocused = Color("CheckbuttonColorBackgroundFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let checkbuttonColorIcon = Color("CheckbuttonColorIcon", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let checkbuttonColorTextSelected = Color("CheckbuttonColorTextSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000000d`**
+    static let checkbuttonColorAreaHovered = Color("CheckbuttonColorAreaHovered", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000001a`**
+    static let checkbuttonColorAreaFocused = Color("CheckbuttonColorAreaFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let switchColorThumb = Color("SwitchColorThumb", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000001a`**
+    static let switchColorBackground = Color("SwitchColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let switchColorBackgroundSelected = Color("SwitchColorBackgroundSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let switchColorBorderFocused = Color("SwitchColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let chipsColorText = Color("ChipsColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let chipsColorIcon = Color("ChipsColorIcon", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#8a95a1ff`**
+    static let chipsColorCounter = Color("ChipsColorCounter", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000000d`**
+    static let chipsColorBackground = Color("ChipsColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let chipsColorTextSelected = Color("ChipsColorTextSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let chipsColorIconSelected = Color("ChipsColorIconSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#8a95a1ff`**
+    static let chipsColorCounterSelected = Color("ChipsColorCounterSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let chipsColorBackgroundSelected = Color("ChipsColorBackgroundSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let chipsColorBorderFocused = Color("ChipsColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000001a`**
+    static let chipsColorBackgroundHovered = Color("ChipsColorBackgroundHovered", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000026`**
+    static let chipsColorBackgroundPressed = Color("ChipsColorBackgroundPressed", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let selectColorText = Color("SelectColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#bbbcbfff`**
+    static let selectColorTextPlaceholder = Color("SelectColorTextPlaceholder", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let selectColorTextDisabled = Color("SelectColorTextDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let selectColorIcon = Color("SelectColorIcon", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let selectColorIconDisabled = Color("SelectColorIconDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let selectColorHint = Color("SelectColorHint", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let selectColorHintError = Color("SelectColorHintError", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00000033`**
+    static let selectColorBorder = Color("SelectColorBorder", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let selectColorBorderFocused = Color("SelectColorBorderFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let selectColorBorderError = Color("SelectColorBorderError", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000001a`**
+    static let selectColorBorderDisabled = Color("SelectColorBorderDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let selectColorBackground = Color("SelectColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#efefefff`**
+    static let selectColorBackgroundDisabled = Color("SelectColorBackgroundDisabled", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#fff2d0ff`**
+    static let selectColorOutlineFocused = Color("SelectColorOutlineFocused", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffe6eaff`**
+    static let selectColorOutlineError = Color("SelectColorOutlineError", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let counterColorText = Color("CounterColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let counterColorBackground = Color("CounterColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let modalColorTitle = Color("ModalColorTitle", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let modalColorBackground = Color("ModalColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let toastColorBackground = Color("ToastColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let toastColorText = Color("ToastColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let toastColorIcon = Color("ToastColorIcon", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000004d`**
+    static let toastColorCloseButton = Color("ToastColorCloseButton", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let segmentedControlColorText = Color("SegmentedControlColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#efefefff`**
+    static let segmentedControlColorBackground = Color("SegmentedControlColorBackground", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let segmentedControlColorBackgroundSelected = Color("SegmentedControlColorBackgroundSelected", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#0000001a`**
+    static let segmentedControlColorSeparator = Color("SegmentedControlColorSeparator", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let badgeColorText = Color("BadgeColorText", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffffff`**
+    static let badgeColorTextInverse = Color("BadgeColorTextInverse", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#efefefff`**
+    static let badgeColorBackgroundLight = Color("BadgeColorBackgroundLight", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f19c38ff`**
+    static let badgeColorBackgroundWarning = Color("BadgeColorBackgroundWarning", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#f14555ff`**
+    static let badgeColorBackgroundError = Color("BadgeColorBackgroundError", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#00be8bff`**
+    static let badgeColorBackgroundSuccess = Color("BadgeColorBackgroundSuccess", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#ffffff4d`**
+    static let badgeColorBackgroundTransparent = Color("BadgeColorBackgroundTransparent", bundle: .module)
+
+    /// Tripster design token for color with hex value of **`#2b3a49ff`**
+    static let badgeColorBackgroundDark = Color("BadgeColorBackgroundDark", bundle: .module)
+
 }

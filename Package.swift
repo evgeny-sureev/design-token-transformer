@@ -4,17 +4,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "design-tokens-ios",
+    name: "DesignTokens",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "design-tokens-ios",
-            targets: ["design-tokens-ios"]
+            name: "DesignTokens",
+            targets: ["DesignTokens"]
         ),
     ],
     targets: [
         .target(
-            name: "design-tokens-ios",
+            name: "DesignTokens",
             path: "build",
             resources: [
                 .copy("DesignToken.xcassets")
