@@ -3,6 +3,7 @@ const { createPropertyFormatter } = StyleDictionary.formatHelpers;
 const deepMerge = require("deepmerge");
 const webConfig = require('./src/web/index.js')
 const iosConfig = require("./src/ios/index.js");
+const changeCase = require('change-case')
 
 StyleDictionary.registerTransform({
   name: 'size/px',
@@ -60,6 +61,18 @@ StyleDictionary.registerFormat({
   }
 });
 
+StyleDictionary.registerFormat({
+  name: 'extension.swift',
+  formatter: function({ dictionary, options, file }) {
+    const { outputReferences } = options;
+    const formatProperty = (token) => {
+      const name = changeCase.pascalCase(token.path.slice(2).join(' '));
+      return '    public static let ' + name + ' = ' + file.className + '('+file.constructorParameter + '"'+ name+'") // ' + token.value
+    }
+    return `\nimport `+file.import+`\n\npublic extension `+file.className+` {\n` + dictionary.allTokens.map(formatProperty).join('\n') + `\n}\n`;
+  }
+});
+
 const StyleDictionaryExtended = StyleDictionary.extend({
   ...deepMerge.all([iosConfig, webConfig]),
   source: ["tokens/*.json"],
@@ -68,7 +81,7 @@ const StyleDictionaryExtended = StyleDictionary.extend({
       transforms: [
         'name/cti/camel'
       ],
-      buildPath: 'Sources/Resources/',
+      buildPath: 'build/',
       files: [
         {
           destination: 'Size.swift',
@@ -76,6 +89,22 @@ const StyleDictionaryExtended = StyleDictionary.extend({
           className: 'Size',
           propertyType: 'CGFloat',
           format: 'enum.swift'
+        },
+        {
+          destination: 'Color.swift',
+          filter: (token) => token.type === 'color',
+          className: 'Color',
+          constructorParameter: '',
+          import: 'SwiftUI',
+          format: 'extension.swift'
+        },
+        {
+          destination: 'UIColor.swift',
+          filter: (token) => token.type === 'color',
+          className: 'UIColor',
+          constructorParameter: 'named: ',
+          import: 'UIKit',
+          format: 'extension.swift'
         }
       ],
       actions: [
